@@ -1,0 +1,31 @@
+{
+    "name": "Gazebo Noetic DevContainer",
+    "dockerComposeFile": "compose.yaml",
+    "service": "gazebo_noetic",
+    "workspaceFolder": "/home/${localEnv:USER}/cvl/gazebo_noetic",
+    "remoteUser": "${localEnv:USER}",
+    "runArgs": [
+      "--gpus", "all"
+    ],
+    "containerEnv": {
+      "DISPLAY": "${localEnv:DISPLAY}",
+      "NVIDIA_VISIBLE_DEVICES": "all",
+      "NVIDIA_DRIVER_CAPABILITIES": "all"
+    },
+    "build": {
+      "args": {
+        "UID": "${localEnv:UID}",
+        "GID": "${localEnv:GID}",
+        "USERNAME": "${localEnv:USER}",
+        "GROUPNAME": "${localEnv:USER}",
+        "PASSWORD": "devcontainer"
+      }
+    },
+    "mounts": [
+      "source=${localEnv:HOME}/.ssh,target=/home/${localEnv:USER}/.ssh,type=bind,consistency=cached"
+    ],
+    "settings": {
+      "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "postCreateCommand": "sudo apt-get update"
+  }
