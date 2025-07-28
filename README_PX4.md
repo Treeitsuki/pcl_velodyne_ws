@@ -24,7 +24,12 @@ INFO  [navigator] Using default takeoff altitude: 2.5 m
 INFO  [commander] Takeoff detected
 ```
 
+# Contol
+![mavros](doc/img/PX4_x_ROS.png)
+
 # References
+[PX4 SITL Tutorial(日本語)](https://uenota.github.io/dronedoc/ja/index.html)
+
 [Gazebo Classic Simulation](https://docs.px4.io/main/en/sim_gazebo_classic/)
 
 [ROS with Gazebo Classic Simulation](https://docs.px4.io/main/en/simulation/ros_interface.html)
